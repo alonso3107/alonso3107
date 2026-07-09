@@ -56,48 +56,7 @@ Soy Alonso, estudiante de **Ingeniería de Sistemas e Informática** y desarroll
 
 </div>
 
-<details>
-<summary>🐍 Activar la serpiente de contribuciones (opcional, animada)</summary>
-<br>
 
-Para que la serpiente que "se come" tus contribuciones aparezca animada aquí, crea un repositorio con tu mismo usuario (`alonso3107/alonso3107`) si no lo tienes, y agrega este workflow en `.github/workflows/snake.yml`:
-
-```yaml
-name: generate snake
-on:
-  schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch: {}
-  push:
-    branches: [ main ]
-
-jobs:
-  generate:
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: alonso3107
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=00F5D4
-      - uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-Luego pega esto donde quieras mostrarla:
-
-```md
-![snake](https://raw.githubusercontent.com/alonso3107/alonso3107/output/github-contribution-grid-snake-dark.svg)
-```
-
-</details>
 
 <br>
 
